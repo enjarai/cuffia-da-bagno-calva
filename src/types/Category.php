@@ -15,11 +15,18 @@ class Category
         $this->image_path = $image_path;
     }
 
-    static function get_all(): array
+    public static function get_all(): array
     {
         global $con;
-        $result = mysqli_query($con, "SELECT * FROM Categories;");
+        $result = mysqli_query($con, "SELECT * FROM categories;");
         return self::from_result($result);
+    }
+
+    public static function get_one(int $categoryid): Category
+    {
+        global $con;
+        $result = mysqli_query($con, "SELECT * FROM categories WHERE categoryid = $categoryid;");
+        return self::from_result($result)[0];
     }
 
     private static function from_result($result): array
