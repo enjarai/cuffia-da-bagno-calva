@@ -60,10 +60,5 @@
 
 <div class="underslide">
 <?php
-$path = $_GET['path'];
-include $path ?? 'home.php';
-
-echo "fgduhghfdugy"
-?>
-</div>
-
+$home_page = 'home.php';
+require key_exists('path', $_GET) ? $_GET['path'] != "" ? $_GET['path'] : $home_page : $home_page;
