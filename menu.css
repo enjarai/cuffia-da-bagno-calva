@@ -1,0 +1,46 @@
+div.menu-column {
+    margin: 0 14px 14px;
+    padding: 10px;
+}
+
+figure.menu-text {
+    margin: 14px;
+}
+
+figure.category-name {
+    margin: 10px;
+    color: #cf7f4b;
+}
+
+dl.category-content {
+    margin: 10px;
+}
+
+hr.category-hr {
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+div.category-image {
+    aspect-ratio: 3 / 1;
+    margin-bottom: 8px;
+    background: no-repeat center;
+    background-size: cover;
+    box-shadow: 0 2px 20px inset rgba(0,0,0,.5);
+}
+
+.product {
+    padding: 0;
+}
+
+.product-name {
+    height: 24px;
+}
+
+.product-price {
+    margin: 0;
+}
+
+.product-description {
+    font-size: 14px;
+}
