@@ -41,6 +41,10 @@
     margin-right: 25px;
 }
 
+li.navbarright {
+    list-style-type: none;
+}
+
 
 
 

@@ -5,12 +5,12 @@
 <div class="navbar">
     <img src="images/logo.png" class="navbarlogo">
     <ul class="nav">
-    <li><a href="home.php">Home</a></li>
-    <li><a href="home.php">Menu</a></li>
-    <li><a href="home.php">Contact</a></li>
+    <li><a href="?path=">Home</a></li>
+    <li><a href="?path=menu.php">Menu</a></li>
+    <li><a href="?path=contact.php">Contact</a></li>
     </ul>
     <lu class="navbarright">
-    <li class="navbarright"><a href="">Login</a></li>
+    <li class="navbarright"><a href="login.php">Login</a></li>
     </lu>
 </div>
 
