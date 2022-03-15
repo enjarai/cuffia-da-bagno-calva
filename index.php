@@ -1,13 +1,11 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 <link rel='stylesheet' href='index.css' type='text/css'>
-<h1>header this</h1>
+<script src="https://kit.fontawesome.com/dd915c0410.js" crossorigin="anonymous"></script>
 
-<ul class='nav'>
-    <li class='nav'><a href='../index.php'>Sales</a></li>
-    <li class='nav'><a href='index.php'>Customers</a></li>
-    <li class='nav about' ><a href='index.php'>productcatalogus</a></li>
-</ul>
+<div class="item1">
+
+<!--nav bar??-->
 
 
 <div id="myCarousel" class="carousel slide slidediv"  data-bs-ride="carousel" height="200px" >
@@ -57,8 +55,29 @@
         <span class="visually-hidden">Next</span>
     </button>
 </div>
+</div>
+<div class="item2">
 
-<div class="underslide">
+
 <?php
 $home_page = 'home.php';
 require key_exists('path', $_GET) ? $_GET['path'] != "" ? $_GET['path'] : $home_page : $home_page;
+?>
+
+</div>
+    <div class="item3">
+        <div class="sub-grid-container">
+        <div class="sub-grid-item1">
+            <h3>Social media:</h3>
+            <i class="fab fa-instagram size"></i>
+            <i class="fab fa-facebook"></i>
+            <!--            <img src='images/burgerS.png'/>-->
+        </div>
+        <div class="sub-grid-item2">
+            <h3>Sponsors:</h3>
+            <img src="images/ikea.png"/>
+            <img src="images/sponser.png"/>
+        </div></div>
+        <h5>Copright © Stonks inc - All rights reserved.<br>
+            designed by signore con il cazzo</h5>
+    </div>
