@@ -5,7 +5,17 @@
 
 <div class="item1">
 
-<!--nav bar??-->
+<div class="navbar">
+    <img src="images/logo.png" class="navbarlogo">
+    <ul class="nav">
+        <li><a href="?path=">Home</a></li>
+        <li><a href="?path=menu.php">Menu</a></li>
+        <li><a href="?path=contact.php">Contact</a></li>
+    </ul>
+    <lu class="navbarright">
+        <li class="navbarright"><a href="login.php">Login</a></li>
+    </lu>
+</div>
 
 
 <div id="myCarousel" class="carousel slide slidediv"  data-bs-ride="carousel" height="200px" >
