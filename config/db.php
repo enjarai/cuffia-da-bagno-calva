@@ -1,6 +1,6 @@
 <?php
 $conf["Username"]= 'root';
-$conf["Password"]= 'root';
+$conf["Password"]= '';
 $conf["Host"]= 'localhost';
 $conf["Database"]= 'pizza';
 
