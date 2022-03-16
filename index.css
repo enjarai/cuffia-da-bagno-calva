@@ -2,7 +2,7 @@
     background-color: white;
     width: 100%;
     height: 100px;
-    z-index: 1;
+    z-index: 2;
     position: sticky;
     top: 0;
     display: block;
@@ -45,8 +45,82 @@ li.navbarright {
     list-style-type: none;
 }
 
+.items {
+    margin: 0 50px;
+    overflow: hidden
+}
 
+.item2 {
+    width: 800px;
+    float: left;
+}
 
+.item2foto {
+    margin-left: 400px;
+
+}
+
+.item1 h2 {
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    color: #003643;
+    margin: 40px 0;
+}
+
+.item2 h4 {
+    font-weight: bold;
+    color: #003643;
+}
+
+.item2 p {
+    font-size: 16px;
+    font-weight: bold;
+    color: #003643;
+}
+
+.item3 {
+    background-color: #e0eff6;
+    width: 500px;
+    height: 700px;
+    float: right;
+}
+
+.item3 h2 {
+    color: #cf7f4b;
+    margin-left: 15px;
+    font-weight: bold;
+}
+
+.item3 hr {
+    width: 95%;
+    color: #cf7f4b;
+    height: 5px;
+    opacity: 100;
+    margin: auto;
+}
+
+.item3 p {
+    color: #003643;
+    font-size: 22px;
+    font-weight: bold;
+    margin-left: 15px;
+}
+
+.mapouter {
+    position:relative;
+    text-align:right;
+    height:500px;
+    width:450px;
+    margin: auto;
+}
+
+.gmap_canvas {
+    overflow:hidden;
+    background:none!important;
+    height:500px;
+    width:450px;
+}
 
 
 
