@@ -1,0 +1,70 @@
+
+.item1h { grid-area: info;
+        text-align: center;
+    margin: 30px 20%;
+}
+.item2h { grid-area: picture;
+        background: no-repeat center;
+        background-size: cover;
+        background-image: url("images/hotdog.jpg");
+        height: 400px}
+.item3h {grid-area: review;
+        text-align: center;
+        height: 300px;}
+/*background-color: #bbdefb*/
+.item4h {grid-area: offers;}
+
+.grid-containerh {
+    display: grid;
+    grid-template-areas:
+    'info info info'
+    'picture picture picture'
+    ' review review review';
+}
+
+.grid-containerh > div {
+    font-size: 10px;
+}
+
+.sub-grid-item1h {grid-area: r1;
+    padding-left: 30px;}
+.sub-grid-item2h {grid-area: r2;
+    border-right: black solid 1px;
+    border-left: black solid 1px;}
+.sub-grid-item3h {grid-area: r3;}
+
+.sub-grid-containerh {
+    display: grid;
+    grid-template-areas:
+  'r1 r2 r3';
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-top: 60px;
+}
+.sub-grid-containerh > div{
+    max-width: 500px;
+    min-width: 500px;
+}
+p.info{
+    font-size: 15px;
+    font-weight: bold;
+    color: #003643;
+}
+p.review{
+    font-size: 13px;
+    font-weight: bold;
+    color: #003643;
+}
+h1.home{
+    font-weight: bold;
+    color: #003643;
+}
+h5.home5{
+    font-weight: bold;
+    color: #003643;
+}
+
+div.reviews {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}

@@ -1,4 +1,9 @@
 <?php
+include("src/check_included.php");
+check_included(__FILE__);
+?>
+
+<?php
 require 'src/types/Category.php';
 require 'src/types/Product.php';
 $all = Category::get_all();
