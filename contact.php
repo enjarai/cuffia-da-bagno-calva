@@ -24,7 +24,7 @@
         <p>Telefoon: 023 515 9500<br>E-mail: info@cuffia-da-bagno-calva</p>
         <div class="mapouter">
             <div class="gmap_canvas">
-                <iframe width="450" height="400" id="gmap_canvas" src="https://maps.google.com/maps?q=Annie%20Romeinstraat%2028,%205803%20AE%20Venray&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+                <iframe width="400" height="400" id="gmap_canvas" src="https://maps.google.com/maps?q=Annie%20Romeinstraat%2028,%205803%20AE%20Venray&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
             </div>
         </div>
         </div>

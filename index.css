@@ -53,6 +53,10 @@ li.navbarright {
     margin: 40px 0;
 }
 
+.col-8 {
+    position: relative;
+}
+
 .col-8 h4 {
     font-weight: bold;
     color: #003643;
@@ -62,6 +66,12 @@ li.navbarright {
     font-size: 16px;
     font-weight: bold;
     color: #003643;
+}
+
+.col-8 img {
+    position: absolute;
+    bottom: 0;
+    margin: auto;
 }
 
 .col-4 {
