@@ -19,7 +19,7 @@ require "src/types/Product.php";
             foreach ($col as $cat) {
                 $name = $cat->name;
                 $image_path = $cat->image_path;
-                $image = $image_path != null ? "<div class='category-image' style='background-image: url(/images/dynamic/$image_path)'></div>" : "";
+                $image = $image_path != null ? "<div class='category-image' style='background-image: url(images/dynamic/$image_path)'></div>" : "";
                 echo "
                     <figure class='category-name'>
                         $image
