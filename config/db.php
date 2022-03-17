@@ -8,12 +8,14 @@ if ($con == false) {
     echo "Can't connect to the database";
 }
 
-mysqli_query($con, "
+$con->query("
     CREATE TABLE IF NOT EXISTS Categories (
         categoryid int AUTO_INCREMENT PRIMARY KEY,
         name varchar(48) NOT NULL,
         imagepath varchar(256)
     );
+");
+$con->query("
     CREATE TABLE IF NOT EXISTS Products (
         productid int AUTO_INCREMENT PRIMARY KEY,
         name varchar(48) NOT NULL,
