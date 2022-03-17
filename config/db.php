@@ -6,17 +6,18 @@ $con = mysqli_connect($conf["Host"], $conf["Username"],
 
 if ($con == false) {
     echo "Can't connect to the database";
+    die;
 }
 
 $con->query("
-    CREATE TABLE IF NOT EXISTS Categories (
+    CREATE TABLE IF NOT EXISTS categories (
         categoryid int AUTO_INCREMENT PRIMARY KEY,
         name varchar(48) NOT NULL,
         imagepath varchar(256)
     );
 ");
 $con->query("
-    CREATE TABLE IF NOT EXISTS Products (
+    CREATE TABLE IF NOT EXISTS products (
         productid int AUTO_INCREMENT PRIMARY KEY,
         name varchar(48) NOT NULL,
         description varchar(128),
