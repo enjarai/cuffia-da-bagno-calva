@@ -1,5 +1,9 @@
+body{
+    background-color: #757575;
+}
+
 .navbar {
-    background-color: white;
+    background-color: #003643;
     width: 100%;
     height: 100px;
     z-index: 2;
@@ -25,14 +29,14 @@
     font-size: 30px;
     font-weight: bold;
     display: block;
-    color: #003643;
+    color: #cf7f4b;
     text-align: center;
     padding: 20px 16px;
     text-decoration: none;
 }
 
 .navbar a:hover {
-    color: #cf7f4b;
+    color: white;
     transition: 0.3s;
 }
 
