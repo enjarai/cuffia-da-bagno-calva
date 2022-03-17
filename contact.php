@@ -1,3 +1,9 @@
+<?php
+include("src/check_included.php");
+check_included(__FILE__);
+?>
+
+contact
 <link rel='stylesheet' href='index.css' type='text/css'>
 
 <div class="container">

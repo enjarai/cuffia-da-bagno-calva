@@ -1,0 +1,5 @@
+[database]
+Host = localhost
+Database = <database name>
+Username = root
+Password =
