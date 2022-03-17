@@ -101,6 +101,9 @@ li.navbarright {
     list-style-type: none;
 }
 
+div.blue-background {
+    background: rgba(187, 222, 251, 0.5);
+}
 
 
 
