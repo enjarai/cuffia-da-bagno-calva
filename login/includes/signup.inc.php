@@ -10,6 +10,8 @@ if (isset ($_POST ["submit"])) {
     require_once '../../config/db.php';
     require_once 'functions.inc.php';
 
+    $con = true;
+
 
     if (emptyInputSignup($name, $email, $username, $pwd, $pwdRepeat) !== false) {
         header("location: ../signup.php?error=emptyinput");
