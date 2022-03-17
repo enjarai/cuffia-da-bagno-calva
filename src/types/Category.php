@@ -18,39 +18,49 @@ class Category
     public function save()
     {
         global $con;
-        $name = $con->escape_string($this->name);
-        $image_path = $con->escape_string($this->image_path);
 
         if ($this->id === null) {
-            $con->query("INSERT INTO categories (categoryid, name, imagepath) VALUES (NULL, $name, $image_path);");
-            $this->id = $con->insert_id;
+            $stmt = $con->prepare("INSERT INTO categories (categoryid, name, imagepath) VALUES (NULL, ?, ?);");
+            $stmt->bind_param("ss", $this->name, $this->image_path);
+            $stmt->execute();
+            $this->id = $stmt->insert_id;
         } else {
-            $id = $con->escape_string($this->id);
-
-            $con->query("UPDATE categories SET name = $name, imagepath = $image_path WHERE categoryid = $id;");
+            $stmt = $con->prepare("UPDATE categories SET name = ?, imagepath = ? WHERE categoryid = ?;");
+            $stmt->bind_param("ssi", $this->name, $this->image_path, $this->id);
+            $stmt->execute();
         }
     }
 
     public function delete()
     {
         global $con;
-        $id = $con->escape_string($this->id);
 
-        $con->query("DELETE FROM categories WHERE categoryid = $id;");
-        $this->id = null;
+        if ($this->id !== null) {
+            $stmt = $con->prepare("DELETE FROM categories WHERE categoryid = ?;");
+            $stmt->bind_param("i", $this->id);
+            $stmt->execute();
+            $this->id = null;
+        }
     }
 
     public static function get_all(): array
     {
         global $con;
+
         $result = $con->query("SELECT * FROM categories;");
+
         return self::from_result($result);
     }
 
     public static function get_one(int $categoryid): Category
     {
         global $con;
-        $result = $con->query("SELECT * FROM categories WHERE categoryid = $categoryid;");
+
+        $stmt = $con->prepare("SELECT * FROM categories WHERE categoryid = ?;");
+        $stmt->bind_param("i", $categoryid);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
         return self::from_result($result)[0];
     }
 
