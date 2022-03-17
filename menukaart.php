@@ -3,16 +3,30 @@
 <script src="https://kit.fontawesome.com/36dd471165.js" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="menukaart.css" type="text/css">
 
+<?php
+$hostname = "localhost";
+$username = "root";
+$password = "";
+$databaseName = "pizza";
+$connect = mysqli_connect($hostname, $username, $password, $databaseName);
+
+$query = "SELECT * FROM `categories`";
+$query2 = "SELECT * FROM `products`";
+
+$result1 = mysqli_query($connect, $query);
+$result2 = mysqli_query($connect, $query2);
+
+?>
+
 
 <div class="container">
     <div class="row">
         <div class="col-12">
             <div class="dropdown">
             <select class="dropdownmenu">
-                <option value="">Categorie 1</option>
-                <option value="">Categorie 2</option>
-                <option value="">Categorie 3</option>
-                <option value="">Categorie 4</option>
+                <?php while ($row1 = mysqli_fetch_array($result1)):;?>
+                <option><?php echo $row1[1];?></option>
+                <?php endwhile;?>
             </select>
                 <i class="fa-solid fa-plus"></i>
                 <i class="fa-solid fa-pen-to-square"></i>
@@ -21,16 +35,9 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-3 colum" >
+        <div class="col-3 colum">
             <dt>Product naam</dt>
-            <dt>Product naam</dt>
-            <dt>Product naam</dt>
-            <dt>Product naam</dt>
-            <dt>Product naam</dt>
-            <dt>Product naam</dt>
-            <dt>Product naam</dt>
-            <dt>Product naam</dt>
-            <dt>Product naam</dt>
+
         </div>
         <div class="col colum">
             <dt>Beschrijving van product</dt>
