@@ -4,6 +4,8 @@ if (isset($_POST["submit"])) {
 
     $username = $_POST["uid"];
     $pwd = $_POST["pwd"];
+    $con = true;
+    $con = false;
 
     require_once '../../config/db.php';
     require_once 'functions.inc.php';

@@ -10,6 +10,9 @@ if (isset ($_POST ["submit"])) {
     require_once '../../config/db.php';
     require_once 'functions.inc.php';
 
+    $con = true;
+    $con = false;
+
     if (emptyInputSignup($name, $email, $username, $pwd, $pwdRepeat) !== false) {
         header("location: ../signup.php?error=emptyinput");
         exit();
@@ -28,7 +31,7 @@ if (isset ($_POST ["submit"])) {
         header("location: ../signup.php?error=passwordsdontmatch");
         exit();
     }
-    if (uidExists($con, $username, $email) !== false) {
+    if (uidExists($con,$username, $email) !== false) {
         header("location: ../signup.php?error=usernametaken");
         exit();
     }
