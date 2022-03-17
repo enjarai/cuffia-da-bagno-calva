@@ -57,7 +57,7 @@ function createUser($con, $name, $email, $username, $pwd) {
     mysqli_stmt_bind_param($stmt, "ssss", $name, $email, $username, $hashedPwd);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
-    header("location: ../signup.php?error=none");
+    header("location: ../signup.php");
     exit();
 }
 
@@ -84,7 +84,7 @@ function loginUser($con, $username, $pwd) {
         session_start();
         $_SESSION["userid"] = $uidExists["usersId"];
         $_SESSION["useruid"] = $uidExists["usersUid"];
-        header("location: ../index.php");
+        header("location: ../login.php");
         exit();
     }
 }
