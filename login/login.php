@@ -2,11 +2,29 @@
 ?>
 
 <section class="login-form">
+    <link rel="stylesheet" href="login.css">
+    <div class="container">
+        <div class="form__input-group">
+            <div class="form__title">
+
+                <div class="form">
+                    <div class="form__text-type">
     <h2>Login</h2>
     <form action="includes/login.inc.php" method="post">
-        <input type="text" name="uid" placeholder="Username/Email...">
-        <input type="password" name="pwd" placeholder="Password...">
-        <button type="submit" name="submit">Login</button>
+        <div class="form__input:focus">
+        <div>
+        <input type="text" name="uid" class="form__input" placeholder="Username/Email..."> </div>
+        <div>
+        <input type="password" name="pwd" class="form__input" placeholder="Password...">
+        </div>
+        <button type="submit" name="submit" class="form__button">Login</button>
+        </div>
+    </div>
+            </div>
+        </div>
+    </div>
+    <div class="form__text-type">
+        <div class="form__text-align">
     </form>
     <?php
     if (isset($_GET["error"])) {
@@ -18,4 +36,7 @@
         }
     }
     ?>
+        </div>
+        </div>
+</div>
 </section>

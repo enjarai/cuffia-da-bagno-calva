@@ -1,14 +1,36 @@
 <?php
 ?>
 <section class="signup-form">
-<h2>Sign Up</h2>
+    <link rel="stylesheet" href="login.css">
+
 <form action="includes/signup.inc.php" method="post">
-    <input type="text" name="name" placeholder="Full name...">
-    <input type="text" name="email" placeholder="Email...">
-    <input type="text" name="uid" placeholder="Username...">
-    <input type="password" name="pwd" placeholder="Password...">
-    <input type="password" name="pwdrepeat" placeholder="Repeat password...">
-    <button type="submit" name="submit">Sign Up</button>
+    <div class="container">
+        <div class="form__input-group">
+            <div class="form__title">
+
+            <div class="form">
+                <div class="form__text-type">
+        <h1 class="form__title">Create Account</h1>
+                   <div class="form__input:focus">
+    <div>
+    <input type="text" name="name" class="form__input" placeholder="Full name..."> </div>
+    <div>
+    <input type="text" name="email" class="form__input" placeholder="Email..."> </div>
+        <div>
+    <input type="text" name="uid" class="form__input" placeholder="Username..."> </div>
+            <div>
+    <input type="password" name="pwd" class="form__input" placeholder="Password..."> </div>
+                <div>
+    <input type="password" name="pwdrepeat" class="form__input" placeholder="Repeat password..."> </div>
+    <button type="submit" name="submit" class="form__button">Sign Up</button>
+    <p class="form__text"></p>
+                   </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        <div class="form__text-type">
+           <div class="form__text-align">
 </form>
     <?php
     if (isset($_GET["error"])) {
@@ -35,6 +57,9 @@
         }
     }
     ?>
+</div>
+    </div>
+    </div>
 </section>
 
 
