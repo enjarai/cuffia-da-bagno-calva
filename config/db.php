@@ -25,3 +25,12 @@ $con->query("
         categoryid int NOT NULL
     );
 ");
+$con->query("
+CREATE TABLE IF NOT EXISTS Users (
+usersId int AUTO_INCREMENT PRIMARY KEY,
+usersName varchar(128) NOT NULL,
+usersEmail varchar(128) NOT NULL,
+usersUid varchar(128) NOT NULL,
+usersPwd varchar(128) NOT NULL
+   ); 
+");
