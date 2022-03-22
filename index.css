@@ -58,7 +58,7 @@ i {
     background-color: white;
     width: 100%;
     height: 100px;
-    z-index: 1;
+    z-index: 2;
     position: sticky;
     top: 0;
     display: block;
@@ -104,8 +104,85 @@ li.navbarright {
 div.blue-background {
     background: rgba(187, 222, 251, 0.5);
 }
+.col-12 h2 {
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    color: #003643;
+    margin: 40px 0;
+}
 
+.col-8 {
+    position: relative;
+}
 
+.col-8 h4 {
+    font-weight: bold;
+    color: #003643;
+}
 
+.col-8 p {
+    font-size: 16px;
+    font-weight: bold;
+    color: #003643;
+}
+
+.col-8 img {
+    position: absolute;
+    bottom: 0;
+    margin: auto;
+}
+
+.col-4 {
+    background-color: #e0eff6;
+    padding-bottom: 30px;
+}
+.col-4 h2 {
+    color: #cf7f4b;
+    margin-left: 15px;
+    font-weight: bold;
+}
+
+.col-4 hr {
+    width: 95%;
+    color: #cf7f4b;
+    height: 5px;
+    opacity: 100;
+    margin: auto;
+}
+
+.col-4 p {
+    color: #003643;
+    font-size: 15px;
+    font-weight: bold;
+    margin-left: 15px;
+}
+
+.col-4 img {
+    width: 100%;
+    height: auto;
+    margin: 15px 0;
+}
+
+.mapouter {
+    position:relative;
+    text-align:right;
+    height:auto;
+    width:auto;
+    margin: auto;
+}
+
+.gmap_canvas {
+    overflow:hidden;
+    background:none!important;
+    height:auto;
+    width:auto;
+}
+
+.img-responsive {
+    max-width: 100%;
+    height:auto;
+    display:block;
+}
 
 
