@@ -63,6 +63,18 @@ class Product
         return self::from_result($result);
     }
 
+    public static function get_one(int $productid): Product
+    {
+        global $con;
+
+        $stmt = $con->prepare("SELECT * FROM products WHERE productid = ?;");
+        $stmt->bind_param("i", $productid);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return self::from_result($result)[0];
+    }
+
     public static function get_all_from_category(Category $category): array
     {
         global $con;
