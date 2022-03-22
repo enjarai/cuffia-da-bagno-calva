@@ -70,8 +70,14 @@
 
 
 <?php
-$home_page = 'home.php';
-require key_exists('path', $_GET) ? $_GET['path'] != "" ? $_GET['path'] : $home_page : $home_page;
+function get_page($home_page): string {
+    $path = key_exists('path', $_GET) && $_GET['path'] != "" ? $_GET['path'] : $home_page;
+    $array = array_values(array_diff(explode("/", $path), ["..", ".", ""]));
+    array_unshift($array, ".");
+    return implode("/", $array);
+}
+
+require get_page('home.php');
 ?>
 
 </div>
