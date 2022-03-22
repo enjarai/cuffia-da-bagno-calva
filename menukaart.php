@@ -4,17 +4,19 @@
 <link rel="stylesheet" href="menukaart.css" type="text/css">
 
 <?php
-$hostname = "localhost";
-$username = "root";
-$password = "";
-$databaseName = "pizza";
-$connect = mysqli_connect($hostname, $username, $password, $databaseName);
+require "src/types/Category.php";
 
-$query = "SELECT * FROM `categories`";
-$query2 = "SELECT * FROM `products`";
+$categories = Category::get_all();
+foreach ($categories as $category) {
+    $name = $category->name;
+}
 
-$result1 = mysqli_query($connect, $query);
-$result2 = mysqli_query($connect, $query2);
+require "src/types/Product.php";
+
+$products = Product::get_all();
+foreach ($products as $product) {
+    $name = $product->name;
+}
 
 ?>
 
@@ -25,9 +27,11 @@ $result2 = mysqli_query($connect, $query2);
         <div class="col-12">
             <div class="dropdown">
             <select class="dropdownmenu">
-                <?php while ($row1 = mysqli_fetch_array($result1)):;?>
-                <option><?php echo $row1[1];?></option>
-                <?php endwhile;?>
+                <?php
+                $categories = Category::get_all();
+                foreach ($categories as $cat) {?>
+                    <option value="<?php $cat ->categortid; ?>"><?php echo $cat ->name?></option>
+                <?php } ?>
             </select>
                 <i class="fa-solid fa-plus"></i>
                 <i class="fa-solid fa-pen-to-square"></i>
@@ -37,8 +41,11 @@ $result2 = mysqli_query($connect, $query2);
     </div>
     <div class="row">
         <div class="col-3 colum">
-            <dt>Product naam</dt>
+            <?php
+            $products = Product::get_all();
 
+
+            ?>
         </div>
         <div class="col colum">
             <dt>Beschrijving van product</dt>
