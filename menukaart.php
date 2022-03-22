@@ -18,7 +18,7 @@ $result2 = mysqli_query($connect, $query2);
 
 ?>
 
-te
+
 
 <div class="container">
     <div class="row">
