@@ -8,14 +8,13 @@ require "src/types/Category.php";
 
 $categories = Category::get_all();
 foreach ($categories as $category) {
-    $name = $category->name;
+
 }
 
 require "src/types/Product.php";
 
 $products = Product::get_all();
 foreach ($products as $product) {
-    $name = $product->name;
 }
 
 ?>
@@ -43,24 +42,33 @@ foreach ($products as $product) {
         <div class="col-3 colum">
             <?php
             $products = Product::get_all();
-
-
-            ?>
+            foreach ($products as $prod) {?>
+                <dt><?php echo $prod ->name?></dt>
+            <?php } ?>
         </div>
         <div class="col colum">
-            <dt>Beschrijving van product</dt>
+            <?php
+            $products = Product::get_all();
+            foreach ($products as $prod) {?>
+                <dt><?php echo $prod ->description?></dt>
+            <?php } ?>
         </div>
         <div class="col-md-auto colum">
-            <dt>72.33€</dt>
-            <dt>72.33€</dt>
-            <dt>72.33€</dt>
-            <dt>72.33€</dt>
-            <dt>72.33€</dt>
-            <dt>72.33€</dt>
+            <?php
+            $products = Product::get_all();
+            foreach ($products as $prod) {?>
+                <dt><?php echo $prod ->price?></dt>
+            <?php } ?>
         </div>
         <div class="col-md-auto colum">
-            <i class="fa-solid fa-pen-to-square"></i>
-            <i class="fa-solid fa-trash"></i>
+            <?php
+            $products = Product::get_all();
+            foreach ($products as $prod) {?>
+                <dt><i class="fa-solid fa-pen-to-square"></i>
+            <i class="fa-solid fa-trash"></i></dt>
+            <?php } ?>
+<!--            <i class="fa-solid fa-pen-to-square"></i>-->
+<!--            <i class="fa-solid fa-trash"></i>-->
         </div>
     </div>
 </div>
