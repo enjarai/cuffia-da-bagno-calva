@@ -9,7 +9,7 @@ class Product
     public $description;
     public $price;
     public $vega;
-    private $categoryid;
+    public $categoryid;
 
     public function __construct($id, $name, $description, $price, $vega, $categoryid)
     {

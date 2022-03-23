@@ -4,13 +4,14 @@ require ('config/db.php');
 
 class Category
 {
-    public $id;
+    public $categoryid;
     public $name;
     public $image_path;
 
-    public function __construct($id, $name, $image_path)
+
+    public function __construct($categoryid, $name, $image_path)
     {
-        $this->id = $id;
+        $this->categoryid = $categoryid;
         $this->name = $name;
         $this->image_path = $image_path;
     }

@@ -18,49 +18,86 @@ foreach ($products as $product) {
     $name = $product->name;
 }
 
-?>
 
+if (isset($_POST["category"])){
+    $selectedcategory = $_POST["category"];
+//    echo $selectedcategory;
+}
+else{
+    $selectedcategory = -1;
+}
+//echo $selectedcategory;
+?>
 
 
 <div class="container">
     <div class="row">
         <div class="col-12">
             <div class="dropdown">
-            <select class="dropdownmenu">
+                <form method="POST" action="">
+            <select class="dropdownmenu" name="category" onchange="this.form.submit()">
                 <?php
                 $categories = Category::get_all();
-                foreach ($categories as $cat) {?>
-                    <option value="<?php $cat ->categortid; ?>"><?php echo $cat ->name?></option>
-                <?php } ?>
+                foreach ($categories as $cat) {
+                    $categoryidT = $cat ->categoryid;
+                    if ($selectedcategory == -1){
+                        $selectedcategory = $categoryidT;
+                    }
+                    if($categoryidT == $selectedcategory){?>
+                        <option value="<?php echo $categoryidT; ?>" selected><?php echo  $cat ->name?></option>
+                        <?php  } else{ ?>
+                    <option value="<?php echo $categoryidT; ?>"><?php echo  $cat ->name ?></option>
+                <?php }} ?>
             </select>
-                <i class="fa-solid fa-plus"></i>
-                <i class="fa-solid fa-pen-to-square"></i>
-                <i class="fa-solid fa-trash"></i>
+                    <i class="fa-solid fa-plus"></i>
+                    <i class="fa-solid fa-pen-to-square"></i>
+                    <i class="fa-solid fa-trash"></i>
+                </form>
+
         </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-3 colum">
+
+
             <?php
             $products = Product::get_all();
 
+            foreach ($products as $prods) {
+                $productcategoryid = $prods->categoryid;
+//            echo $categoryidT . $productcategoryid;
 
+                if ($selectedcategory == $productcategoryid) {
+
+                    echo "<div class='row'>";
+                    echo "<div class='col-3 colum'>";
+                    echo "<dt>" . $prods->name . "</dt>";
+                    echo "</div>";
+                    echo "<div class='col colum'>";
+                    echo "<dt>" . $prods->description . "</dt>";
+                    echo "</div>";
+                    echo "<div class='col-md-auto colum'>";
+                    echo "<dt>" . $prods->price . "</dt>";
+                    echo "</div>";
+                    echo "<div class='col-md-auto colum'>
+                        <i class='fa-solid fa-pen-to-square'></i>
+                        <i class='fa-solid fa-trash'></i>
+                      </div>";
+                    echo "</div>";
+                }
+            }
             ?>
-        </div>
-        <div class="col colum">
-            <dt>Beschrijving van product</dt>
-        </div>
-        <div class="col-md-auto colum">
-            <dt>72.33€</dt>
-            <dt>72.33€</dt>
-            <dt>72.33€</dt>
-            <dt>72.33€</dt>
-            <dt>72.33€</dt>
-            <dt>72.33€</dt>
-        </div>
-        <div class="col-md-auto colum">
-            <i class="fa-solid fa-pen-to-square"></i>
-            <i class="fa-solid fa-trash"></i>
-        </div>
-    </div>
+<!--        </div>-->
+<!--        <div class="col colum">-->
+<!--            <dt>Beschrijving van product</dt>-->
+<!--        </div>-->
+<!--        <div class="col-md-auto colum">-->
+<!--            <dt>72.33€</dt>-->
+<!--            <dt>72.33€</dt>-->
+<!--            <dt>72.33€</dt>-->
+<!--            <dt>72.33€</dt>-->
+<!--            <dt>72.33€</dt>-->
+<!--            <dt>72.33€</dt>-->
+<!--        </div>-->
+<!--        -->
+<!--    </div>-->
 </div>
