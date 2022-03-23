@@ -67,8 +67,6 @@ foreach ($products as $product) {
                 <dt><i class="fa-solid fa-pen-to-square"></i>
             <i class="fa-solid fa-trash"></i></dt>
             <?php } ?>
-<!--            <i class="fa-solid fa-pen-to-square"></i>-->
-<!--            <i class="fa-solid fa-trash"></i>-->
         </div>
     </div>
 </div>
