@@ -17,17 +17,13 @@ $products = Product::get_all();
 foreach ($products as $product) {
 }
 
-
 if (isset($_POST["category"])){
     $selectedcategory = $_POST["category"];
-//    echo $selectedcategory;
 }
 else{
     $selectedcategory = -1;
 }
-//echo $selectedcategory;
 ?>
-
 
 <div class="container">
     <div class="row">
@@ -52,50 +48,56 @@ else{
                     <i class="fa-solid fa-pen-to-square"></i>
                     <i class="fa-solid fa-trash"></i>
                 </form>
-
-        </div>
+            </div>
         </div>
     </div>
 
-
-            <?php
-            $products = Product::get_all();
-
-            foreach ($products as $prods) {
-                $productcategoryid = $prods->categoryid;
-//            echo $categoryidT . $productcategoryid;
-
-                if ($selectedcategory == $productcategoryid) {
-
-                    echo "<div class='row'>";
-                    echo "<div class='col-3 colum'>";
-                    echo "<dt>" . $prods->name . "</dt>";
-                    echo "</div>";
-                    echo "<div class='col colum'>";
-                    echo "<dt>" . $prods->description . "</dt>";
-                    echo "</div>";
-                    echo "<div class='col-md-auto colum'>";
-                    echo "<dt>" . $prods->price . "</dt>";
-                    echo "</div>";
-                    echo "<div class='col-md-auto colum'>
-                        <i class='fa-solid fa-pen-to-square'></i>
-                        <i class='fa-solid fa-trash'></i>
-                      </div>";
-                    echo "</div>";
+        <div class='row'>
+            <div class='col-3 colum'>
+                <?php
+                $products = Product::get_all();
+                foreach ($products as $prods) {
+                    $productcategoryid = $prods->categoryid;
+                    if ($selectedcategory == $productcategoryid) {
+                        echo "<dt>" . $prods->name . "</dt>";
+                    }
                 }
-            }
-            ?>
-<!--        </div>-->
-<!--        <div class="col colum">-->
-<!--            <dt>Beschrijving van product</dt>-->
-<!--        </div>-->
-<!--        <div class="col-md-auto colum">-->
-<!--            <dt>72.33€</dt>-->
-<!--            <dt>72.33€</dt>-->
-<!--            <dt>72.33€</dt>-->
-<!--            <dt>72.33€</dt>-->
-<!--            <dt>72.33€</dt>-->
-<!--            <dt>72.33€</dt>-->
-<!--        </div>-->
-<!--    </div>-->
-</div>
+                ?>
+            </div>
+            <div class="col colum">
+                <?php
+                $products = Product::get_all();
+                foreach ($products as $prods) {
+                    $productcategoryid = $prods->categoryid;
+                    if ($selectedcategory == $productcategoryid) {
+                        echo "<dt>" . $prods->description . "</dt>";
+                    }
+                }
+                ?>
+            </div>
+            <div class="col-md-auto colum">
+                <?php
+                $products = Product::get_all();
+                foreach ($products as $prods) {
+                    $productcategoryid = $prods->categoryid;
+                    if ($selectedcategory == $productcategoryid) {
+                        echo "<dt>" . $prods->price . "</dt>";
+                    }
+                }
+                ?>
+            </div>
+            <div class="col-md-auto colum">
+                <?php
+                $products = Product::get_all();
+                foreach ($products as $prods) {
+                    $productcategoryid = $prods->categoryid;
+                    if ($selectedcategory == $productcategoryid) {
+                        echo "<dt><i class='fa-solid fa-pen-to-square'></i>
+                        <i class='fa-solid fa-trash'></i></dt>";
+                    }
+                }
+                ?>
+            </div>
+        </div>
+
+
