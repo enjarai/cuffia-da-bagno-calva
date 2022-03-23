@@ -13,7 +13,14 @@
         <li><a href="?path=contact.php">Contact</a></li>
     </ul>
     <lu class="navbarright">
-        <li class="navbarright"><a href="login.php">Login</a></li>
+        <?php
+            session_start();
+            if (isset($_SESSION["useruid"])) {
+                echo "<li class='navbarright'><a href='login/includes/logout.inc.php'>Logout</a></li>";
+            } else {
+                echo "<li class='navbarright'><a href='login/login.php'>Login</a></li>";
+            }
+        ?>
     </lu>
 </div>
 

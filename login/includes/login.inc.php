@@ -7,15 +7,15 @@ if (isset($_POST["submit"])) {
 
     require_once '../../config/db.php';
     require_once 'functions.inc.php';
+    global $con;
 
-    if (emptyInputLogin( $username, $pwd) !== false) {
+    if (emptyInputLogin($username, $pwd) !== false) {
         header("location: ../login.php?error=emptyinput");
         exit();
     }
 
     loginUser($con, $username, $pwd);
-}
-else {
+} else {
     header("location: ../login.php");
     exit();
 }

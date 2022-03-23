@@ -1,4 +1,10 @@
 <?php
+session_start();
+
+if (!isset($_SESSION["useruid"])) {
+    header("location: login.php");
+    die;
+}
 ?>
 <section class="signup-form">
     <link rel="stylesheet" href="login.css">
@@ -58,8 +64,8 @@
     }
     ?>
 </div>
-    </div>
-    </div>
+</div>
+</div>
 </section>
 
 

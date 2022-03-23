@@ -9,14 +9,14 @@ if ($con == false) {
 }
 
 $con->query("
-    CREATE TABLE IF NOT EXISTS Categories (
+    CREATE TABLE IF NOT EXISTS categories (
         categoryid int AUTO_INCREMENT PRIMARY KEY,
         name varchar(48) NOT NULL,
         imagepath varchar(256)
     );
 ");
 $con->query("
-    CREATE TABLE IF NOT EXISTS Products (
+    CREATE TABLE IF NOT EXISTS products (
         productid int AUTO_INCREMENT PRIMARY KEY,
         name varchar(48) NOT NULL,
         description varchar(128),
@@ -26,11 +26,11 @@ $con->query("
     );
 ");
 $con->query("
-CREATE TABLE IF NOT EXISTS Users (
-usersId int AUTO_INCREMENT PRIMARY KEY,
-usersName varchar(128) NOT NULL,
-usersEmail varchar(128) NOT NULL,
-usersUid varchar(128) NOT NULL,
-usersPwd varchar(128) NOT NULL
+    CREATE TABLE IF NOT EXISTS users (
+        usersId int AUTO_INCREMENT PRIMARY KEY,
+        usersName varchar(128) NOT NULL,
+        usersEmail varchar(128) NOT NULL,
+        usersUid varchar(128) NOT NULL,
+        usersPwd varchar(128) NOT NULL
    ); 
 ");
