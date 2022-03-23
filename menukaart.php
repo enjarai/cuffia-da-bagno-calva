@@ -8,14 +8,13 @@ require "src/types/Category.php";
 
 $categories = Category::get_all();
 foreach ($categories as $category) {
-    $name = $category->name;
+
 }
 
 require "src/types/Product.php";
 
 $products = Product::get_all();
 foreach ($products as $product) {
-    $name = $product->name;
 }
 
 
