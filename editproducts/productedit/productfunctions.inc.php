@@ -13,9 +13,9 @@ function createProduct($con, $name, $description, $price, $vega, $categoryid)
     header("location:create.php?error=none");
     exit();
 }
-function emptyInputCreate($name, $price, $vega, $categoryid)
+function emptyInputCreate($name, $price, $categoryid)
 {
-    return empty($name) || empty($price) || empty($vega) || empty($categoryid);
+    return empty($name) || empty($price) || empty($categoryid);
 }
 
 function nameExists($con, $name)

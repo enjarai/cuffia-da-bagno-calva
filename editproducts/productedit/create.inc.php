@@ -6,11 +6,11 @@ if (isset ($_POST ["submit"])) {
     $price = $_POST['price'];
     $vega = $_POST['vega'];
     $categoryid = $_POST['categoryid'];
-
-    require_once '../config/db.php';
+global $con;
+    require_once '../../config/db.php';
     require_once 'productfunctions.inc.php';
 
-    if (emptyInputCreate($name, $price, $vega, $categoryid) !== false) {
+    if (emptyInputCreate($name, $price, $categoryid) !== false) {
         header("location: create.php?error=emptyinput");
         exit();
     }
