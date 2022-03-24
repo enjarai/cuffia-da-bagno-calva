@@ -26,3 +26,7 @@ dt {
     padding: 5px 10px;
     min-height: 40px;
 }
+.plus{
+    float: right;
+    font-size: 25px;
+}
