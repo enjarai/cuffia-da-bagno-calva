@@ -10,8 +10,6 @@ require "src/types/Product.php";
 
 <link rel='stylesheet' href='menu.css' type='text/css'>
 
-<body onresize="onResizeMenu()">
-
 <figure class='menu-text text-center align-text-center'>
     <h3>Menukaart</h3>
 </figure>
@@ -23,7 +21,7 @@ require "src/types/Product.php";
         $cols = array_chunk($result, ceil(sizeof($result) / 2));
         for ($i = 0; $i < sizeof($cols); $i++) {
             $col = $cols[$i];
-            echo "<div class='blue-background menu-column col' id='col-num-$i'>";
+            echo "<div class='blue-background menu-column col-md'>";
             foreach ($col as $cat) {
                 $name = $cat->name;
                 $image_path = $cat->image_path;
@@ -54,30 +52,3 @@ require "src/types/Product.php";
         ?>
     </div>
 </div>
-
-<script>
-    const mergeSize = 620;
-    const colsAmount = <?php echo sizeof($cols) ?>;
-    let lastSize = 0;
-
-    function getCols() {
-        let cols = [];
-        for (let i = 0; i < colsAmount; i++) {
-            cols.push(document.getElementById("col-num-" + i));
-        }
-        return cols;
-    }
-
-    function onResizeMenu() {
-        let currentSize = window.innerWidth;
-        if (lastSize > mergeSize && currentSize < mergeSize) {
-            getCols().forEach((value, index, array) => {
-                if (index !== 0) {
-                    array[0].body += value.body;
-                    value.body = null;
-                }
-            });
-        }
-        lastSize = currentSize
-    }
-</script>
