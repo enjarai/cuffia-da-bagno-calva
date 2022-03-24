@@ -7,12 +7,12 @@ $result = mysqli_query($con,$query);
 
 <table>
     <tr>
-        <td> Product ID</td>
-        <td> Product Name</td>
-        <td> Product Description</td>
-        <td> Product Price</td>
-        <td> Product Vega</td>
-        <td> Product category</td>
+        <td> ID</td>
+        <td> Name</td>
+        <td> Description</td>
+        <td> Price</td>
+        <td> Vega</td>
+        <td> category</td>
         <td> Edit</td>
         <td> Delete</td>
 
