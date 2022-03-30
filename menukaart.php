@@ -2,6 +2,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 <script src="https://kit.fontawesome.com/36dd471165.js" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="menukaart.css" type="text/css">
+<link rel="stylesheet" href="index.css" type="text/css">
 
 <?php
 require "src/types/Category.php";
@@ -51,54 +52,27 @@ else{
             </div>
         </div>
     </div>
+    <table style="width: 100%" class="blue-background">
+        <?php
+        $products = Product::get_all_from_category(Category::get_one($selectedcategory));
+        foreach ($products as $product) {
+            ?>
+            <tr>
+                <td class="cell colum" style="width: 25%"><?php echo $product->name ?></td>
+                <td class="cell colum" style=""><?php echo $product->description ?></td>
+                <td class="cell colum" style="width: 10%; text-align: right"><?php echo number_format($product->price, 2) ?></td>
 
-        <div class='row'>
-            <div class='col-3 colum'>
-                <?php
-                $products = Product::get_all();
-                foreach ($products as $prods) {
-                    $productcategoryid = $prods->categoryid;
-                    if ($selectedcategory == $productcategoryid) {
-                        echo "<dt>" . $prods->name . "</dt>";
-                    }
-                }
-                ?>
-            </div>
-            <div class="col colum">
-                <?php
-                $products = Product::get_all();
-                foreach ($products as $prods) {
-                    $productcategoryid = $prods->categoryid;
-                    if ($selectedcategory == $productcategoryid) {
-                        echo "<dt>" . $prods->description . "</dt>";
-                    }
-                }
-                ?>
-            </div>
-            <div class="col-md-auto colum">
-                <?php
-                $products = Product::get_all();
-                foreach ($products as $prods) {
-                    $productcategoryid = $prods->categoryid;
-                    if ($selectedcategory == $productcategoryid) {
-                        echo "<dt>" . $prods->price . "</dt>";
-                    }
-                }
-                ?>
-            </div>
-            <div class="col-md-auto colum">
-                <?php
-                $products = Product::get_all();
-                foreach ($products as $prods) {
-                    $productcategoryid = $prods->categoryid;
-                    if ($selectedcategory == $productcategoryid) {
-                        echo "<dt><i class='fa-solid fa-pen-to-square'></i>
-                        <i class='fa-solid fa-trash'></i></dt>";
-                    }
-                }
-                ?>
-            </div>
-        </div>
+                <td class="cell colum" style="width: 1px; white-space: nowrap">
+                    <dt>
+                        <i class='fa-solid fa-pen-to-square'></i>
+                        <i class='fa-solid fa-trash'></i>
+                    </dt>
+                </td>
+            </tr>
+            <?php
+        }
+        ?>
+    </table>
     <dt><i class="fa-solid fa-plus plus"></i></dt>
 
 

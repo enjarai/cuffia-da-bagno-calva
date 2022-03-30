@@ -23,10 +23,17 @@
 }
 
 dt {
-    padding: 5px 10px;
+    padding: 5px 0;
     min-height: 40px;
 }
 .plus{
     float: right;
     font-size: 25px;
+}
+
+td.cell {
+    padding: 5px 10px;
+    border-left: 10px solid white;
+    border-right: 10px solid white;
+    line-height: 1.2;
 }
