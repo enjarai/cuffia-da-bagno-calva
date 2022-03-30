@@ -18,7 +18,7 @@
     </div>
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <div class="slideimg" style="background-image: url('images/panino.png') "></div>
+            <div class="slideimg" style="background-image: url('images/everything.png') "></div>
 
             <div class="container">
                 <div class="carousel-caption text-start">
@@ -28,7 +28,7 @@
             </div>
         </div>
         <div class="carousel-item">
-            <div class="slideimg" style="background-image: url('images/burgerS.png') "></div>
+            <div class="slideimg" style="background-image: url('images/img.png') "></div>
 
             <div class="container">
                 <div class="carousel-caption text-start">
@@ -38,7 +38,7 @@
             </div>
         </div>
         <div class="carousel-item">
-            <div class="slideimg" style="background-image: url('images/burgerS.png') "></div>
+            <div class="slideimg" style="background-image: url('images/maccie.jpg') "></div>
 
             <div class="container">
                 <div class="carousel-caption text-start">
