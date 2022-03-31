@@ -1,68 +1,62 @@
-
-.item1h { grid-area: info;
-        text-align: center;
-        margin-left: 300px;
-        margin-right: 300px;
-        margin-top: 30px;
-        margin-bottom: 30px}
-.item2h { grid-area: picture;
-        background: no-repeat center;
-        background-size: cover;
-        background-image: url("images/hotdog.jpg");
-        height: 400px}
-.item3h {grid-area: review;
-        text-align: center;
-        height: 300px;}
-/*background-color: #bbdefb*/
-.item4h {grid-area: offers;}
-
-.grid-containerh {
-    display: grid;
-    grid-template-areas:
-    'info info info'
-    'picture picture picture'
-    ' review review review';
+.container-fluid {
+    padding-left: revert;
+    padding-right: revert;
 }
 
-.grid-containerh > div {
-    font-size: 10px;
+.row {
+    --bs-gutter-x: 0;
+    --bs-gutter-y: 0;
 }
 
-.sub-grid-item1h {grid-area: r1;
-    padding-left: 30px;}
-.sub-grid-item2h {grid-area: r2;
-    border-right: black solid 1px;
-    border-left: black solid 1px;}
-.sub-grid-item3h {grid-area: r3;}
+.row3 {
+    margin: 50px 0;
+}
 
-.sub-grid-containerh {
-    display: grid;
-    grid-template-areas:
-  'r1 r2 r3';
-    padding-top: 20px;
-    padding-bottom: 20px;
-    margin-top: 60px;
+#col1 {
+    text-align: center;
+    margin: 30px 0;
 }
-.sub-grid-containerh > div{
-    max-width: 500px;
-    min-width: 500px;
+
+h1.home {
+    font-weight: bold;
+    color: #003643;
+    margin: 30px 0;
 }
+
 p.info{
     font-size: 15px;
     font-weight: bold;
     color: #003643;
 }
-p.review{
+
+#col2 img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+#col3 p {
     font-size: 13px;
     font-weight: bold;
     color: #003643;
+    text-align: center;
 }
-h1.home{
-    font-weight: bold;
-    color: #003643;
-}
-h5.home5{
-    font-weight: bold;
-    color: #003643;
 
+#col3 h5 {
+    font-weight: bold;
+    color: #003643;
+    text-align: center;
+}
+
+#col3 img {
+    width: auto;
+    height: 40px;
+    margin: auto;
+    display: block;
+}
+
+.colborder {
+    border-right: black solid 1px;
+    border-left: black solid 1px;
+    border-width: 1.5px;
 }
