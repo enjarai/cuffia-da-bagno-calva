@@ -66,7 +66,7 @@ while ($row = mysqli_fetch_assoc($result)) {
 
                 <td class="cell colum" style="width: 1px; white-space: nowrap">
                     <dt>
-                        <a href="../edit.php?GetID=<?php echo $productid ?>"><i class='fa-solid fa-pen-to-square'></i></a>
+                        <a href="editproducts/productedit/edit.php?GetID=<?php echo $product->id ?>"><i class='fa-solid fa-pen-to-square'></i></a>
                         <i class='fa-solid fa-trash'></i>
                     </dt>
                 </td>
