@@ -4,14 +4,14 @@ require ('config/db.php');
 
 class Product
 {
-    public $id;
-    public $name;
-    public $description;
-    public $price;
-    public $vega;
-    public $categoryid;
+    public ?int $id;
+    public string $name;
+    public ?string $description;
+    public float $price;
+    public bool $vega;
+    private int $categoryid;
 
-    public function __construct($id, $name, $description, $price, $vega, $categoryid)
+    public function __construct($name, $description, $price, $vega, $categoryid, $id = null)
     {
         $this->id = $id;
         $this->name = $name;
@@ -19,6 +19,34 @@ class Product
         $this->price = $price;
         $this->vega = $vega;
         $this->categoryid = $categoryid;
+    }
+
+    public function save()
+    {
+        global $con;
+
+        if ($this->id === null) {
+            $stmt = $con->prepare("INSERT INTO products (productid, name, description, price, vega, categoryid) VALUES (NULL, ?, ?, ?, ?, ?);");
+            $stmt->bind_param("ssdbi", $this->name, $this->description, $this->price, $this->vega, $this->categoryid);
+            $stmt->execute();
+            $this->id = $stmt->insert_id;
+        } else {
+            $stmt = $con->prepare("UPDATE products SET name = ?, description = ?, price = ?, vega = ?, categoryid = ? WHERE productid = ?;");
+            $stmt->bind_param("ssdbii", $this->name, $this->description, $this->price, $this->vega, $this->categoryid, $this->id);
+            $stmt->execute();
+        }
+    }
+
+    public function delete()
+    {
+        global $con;
+
+        if ($this->id !== null) {
+            $stmt = $con->prepare("DELETE FROM products WHERE productid = ?;");
+            $stmt->bind_param("i", $this->id);
+            $stmt->execute();
+            $this->id = null;
+        }
     }
 
     public function get_category(): Category
@@ -29,15 +57,33 @@ class Product
     static function get_all(): array
     {
         global $con;
+
         $result = mysqli_query($con, "SELECT * FROM products;");
+
         return self::from_result($result);
+    }
+
+    public static function get_one(int $productid): Product
+    {
+        global $con;
+
+        $stmt = $con->prepare("SELECT * FROM products WHERE productid = ?;");
+        $stmt->bind_param("i", $productid);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return self::from_result($result)[0];
     }
 
     public static function get_all_from_category(Category $category): array
     {
         global $con;
-        $id = $category->id;
-        $result = mysqli_query($con, "SELECT * FROM products WHERE categoryid = $id;");
+
+        $stmt = $con->prepare("SELECT * FROM products WHERE categoryid = ?;");
+        $stmt->bind_param("i", $category->id);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
         return self::from_result($result);
     }
 
@@ -45,7 +91,7 @@ class Product
     {
         $out = [];
         while ($row = mysqli_fetch_assoc($result)) {
-            array_push($out, new Product($row['productid'], $row['name'], $row['description'], $row['price'], $row['vega'], $row['categoryid']));
+            $out[] = new Product($row['name'], $row['description'], $row['price'], $row['vega'], $row['categoryid'], $row['productid']);
         }
         return $out;
     }
