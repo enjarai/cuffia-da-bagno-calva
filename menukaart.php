@@ -27,6 +27,15 @@ while ($row = mysqli_fetch_assoc($result)) {
     $categoryid = $row['categoryid'];
 }
 ?>
+<?php
+global $con;
+$query = "select * from categories";
+$result = mysqli_query($con,$query);
+while ($row=mysqli_fetch_assoc($result)) {
+    $categoryid = $row['categoryid'];
+    $name = $row['name'];
+}
+?>
 
 <div class="container">
     <div class="row">
@@ -45,16 +54,23 @@ while ($row = mysqli_fetch_assoc($result)) {
                         <option value="<?php echo $categoryidT; ?>" selected><?php echo  $cat ->name?></option>
                         <?php  } else{ ?>
                     <option value="<?php echo $categoryidT; ?>"><?php echo  $cat ->name ?></option>
-                <?php }} ?>
+                <?php } ?>
             </select>
                     <i class="fa-solid fa-plus"></i>
-                    <i class="fa-solid fa-pen-to-square"></i>
-                    <i class="fa-solid fa-trash"></i>
+                    <a href="editproducts/categoryedit/cat.edit.php?CatGetID=<?php echo $cat->id ?>"><i class="fa-solid fa-pen-to-square"></i></a>
+                    <a href="editproducts/categoryedit/cat.delete.php?CatDel=<?php echo $cat->id ?>"><i class="fa-solid fa-trash"></i></a>
+                    <?php } ?>
                 </form>
             </div>
         </div>
     </div>
     <table style="width: 100%" class="blue-background">
+        <tr>
+            <td>Name</td>
+            <td>Description</td>
+            <td>Price</td>
+            <td>Vega</td>
+        </tr>
         <?php
         $products = Product::get_all_from_category(Category::get_one($selectedcategory));
         foreach ($products as $product) {
@@ -63,11 +79,12 @@ while ($row = mysqli_fetch_assoc($result)) {
                 <td class="cell colum" style="width: 25%"><?php echo $product->name ?></td>
                 <td class="cell colum" style=""><?php echo $product->description ?></td>
                 <td class="cell colum" style="width: 10%; text-align: right"><?php echo number_format($product->price, 2) ?></td>
+                <td class="cell colum" style=""><?php echo $vega?></td>
 
                 <td class="cell colum" style="width: 1px; white-space: nowrap">
                     <dt>
                         <a href="editproducts/productedit/edit.php?GetID=<?php echo $product->id ?>"><i class='fa-solid fa-pen-to-square'></i></a>
-                        <i class='fa-solid fa-trash'></i>
+                        <a href="editproducts/productedit/delete.php?Del=<?php echo $product->id ?>"><i class='fa-solid fa-trash'></i></a>
                     </dt>
                 </td>
             </tr>

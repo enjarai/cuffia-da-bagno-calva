@@ -37,3 +37,12 @@ td.cell {
     border-right: 10px solid white;
     line-height: 1.2;
 }
+
+i {
+    color: black;
+}
+
+i:hover {
+    color: #cf7f4b;
+    transition: 0.3s;
+}
