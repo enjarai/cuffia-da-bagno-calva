@@ -14,6 +14,18 @@ if (isset($_POST["category"])){
 else{
     $selectedcategory = -1;
 }
+global $con;
+$query = "select * from products";
+$result = mysqli_query($con,$query);
+
+while ($row = mysqli_fetch_assoc($result)) {
+    $productid = $row['productid'];
+    $name = $row['name'];
+    $description = $row['description'];
+    $price = $row['price'];
+    $vega = $row['vega'];
+    $categoryid = $row['categoryid'];
+}
 ?>
 
 <div class="container">
@@ -54,7 +66,7 @@ else{
 
                 <td class="cell colum" style="width: 1px; white-space: nowrap">
                     <dt>
-                        <i class='fa-solid fa-pen-to-square'></i>
+                        <a href="../edit.php?GetID=<?php echo $productid ?>"><i class='fa-solid fa-pen-to-square'></i></a>
                         <i class='fa-solid fa-trash'></i>
                     </dt>
                 </td>
