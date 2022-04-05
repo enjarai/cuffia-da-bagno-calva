@@ -6,20 +6,10 @@
 
 <?php
 require "src/types/Category.php";
-
-$categories = Category::get_all();
-foreach ($categories as $category) {
-
-}
-
 require "src/types/Product.php";
 
-$products = Product::get_all();
-foreach ($products as $product) {
-}
-
 if (isset($_POST["category"])){
-    $selectedcategory = $_POST["category"];
+    $selectedcategory = (int) $_POST["category"];
 }
 else{
     $selectedcategory = -1;
@@ -35,8 +25,8 @@ else{
                 <?php
                 $categories = Category::get_all();
                 foreach ($categories as $cat) {
-                    $categoryidT = $cat ->categoryid;
-                    if ($selectedcategory == -1){
+                    $categoryidT = $cat->id;
+                    if ($selectedcategory === -1){
                         $selectedcategory = $categoryidT;
                     }
                     if($categoryidT == $selectedcategory){?>
