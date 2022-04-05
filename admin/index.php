@@ -2,7 +2,7 @@
 session_start();
 
 if (!isset($_SESSION["useruid"])) {
-    header("location: /login/login.php");
+    header("location: ../login/login.php");
     die;
 }
 ?>
@@ -12,20 +12,19 @@ if (!isset($_SESSION["useruid"])) {
 <link rel="stylesheet" href="index.css" type="text/css">
 <body>
 <div class="navbar">
-    <img src="../images/logo.png" class="navbarlogo">
+    <img src="../images/logo_dark.png" class="navbarlogo">
     <ul class="nav">
-        <li><a href="?path=">Home</a></li>
-        <li><a href="?path=menu.php">Menu</a></li>
-        <li><a href="?path=contact.php">Contact</a></li>
+        <li><a href="?path=menuedit.php">Menu</a></li>
+        <li><a href="?path=useredit.php">Users</a></li>
     </ul>
     <lu class="navbarright">
-        <li class="navbarright"><a href="login.php">Login</a></li>
+        <li class='navbarright'><a href='../login/includes/logout.inc.php'>Logout</a></li>
     </lu>
 </div>
 
 
 <?php
-require "src/wrapper.php";
+require "../src/wrapper.php";
 require get_page('menuedit.php');
 ?>
 
