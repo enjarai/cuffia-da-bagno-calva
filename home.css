@@ -1,10 +1,8 @@
 
 .item1h { grid-area: info;
         text-align: center;
-        margin-left: 300px;
-        margin-right: 300px;
-        margin-top: 30px;
-        margin-bottom: 30px}
+    margin: 30px 20%;
+}
 .item2h { grid-area: picture;
         background: no-repeat center;
         background-size: cover;
@@ -64,4 +62,9 @@ h1.home{
 h5.home5{
     font-weight: bold;
     color: #003643;
+}
+
+div.reviews {
+    margin-top: 30px;
+    margin-bottom: 30px;
 }

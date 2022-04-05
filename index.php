@@ -5,7 +5,24 @@
 
 <div class="item1">
 
-<!--nav bar??-->
+<div class="navbar">
+    <img src="images/logo.png" class="navbarlogo">
+    <ul class="nav">
+        <li><a href="?path=">Home</a></li>
+        <li><a href="?path=menu.php">Menu</a></li>
+        <li><a href="?path=contact.php">Contact</a></li>
+    </ul>
+    <lu class="navbarright">
+        <?php
+            session_start();
+            if (isset($_SESSION["useruid"])) {
+                echo "<li class='navbarright'><a href='login/includes/logout.inc.php'>Logout</a></li>";
+            } else {
+                echo "<li class='navbarright'><a href='login/login.php'>Login</a></li>";
+            }
+        ?>
+    </lu>
+</div>
 
 
 <div id="myCarousel" class="carousel slide slidediv"  data-bs-ride="carousel" height="200px" >
@@ -60,8 +77,14 @@
 
 
 <?php
-$home_page = 'home.php';
-require key_exists('path', $_GET) ? $_GET['path'] != "" ? $_GET['path'] : $home_page : $home_page;
+function get_page($home_page): string {
+    $path = key_exists('path', $_GET) && $_GET['path'] != "" ? $_GET['path'] : $home_page;
+    $array = array_values(array_diff(explode("/", $path), ["..", ".", ""]));
+    array_unshift($array, ".");
+    return implode("/", $array);
+}
+
+require get_page('home.php');
 ?>
 
 </div>
@@ -69,8 +92,8 @@ require key_exists('path', $_GET) ? $_GET['path'] != "" ? $_GET['path'] : $home_
         <div class="sub-grid-container">
         <div class="sub-grid-item1">
             <h3>Social media:</h3>
-            <i class="fab fa-instagram size"></i>
-            <i class="fab fa-facebook"></i>
+            <i class="fab fa-instagram size icon"></i>
+            <i class="fab fa-facebook icon"></i>
             <!--            <img src='images/burgerS.png'/>-->
         </div>
         <div class="sub-grid-item2">
