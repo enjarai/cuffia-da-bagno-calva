@@ -66,15 +66,18 @@ while ($row=mysqli_fetch_assoc($result)) {
             </div>
         </div>
     </div>
+    <?php $products = Product::get_all_from_category(Category::get_one($selectedcategory)); ?>
     <table style="width: 100%" class="blue-background">
         <tr>
             <td>Name</td>
             <td>Description</td>
             <td>Price</td>
             <td>Vega</td>
+            <td>
+                <a target="_blank" href="editproducts/productedit/create.php?=<?php echo $products ?>"><i class="fa-solid fa-plus plus"></i></a>
+            </td>
         </tr>
         <?php
-        $products = Product::get_all_from_category(Category::get_one($selectedcategory));
         foreach ($products as $product) {
             ?>
             <tr>
@@ -94,7 +97,7 @@ while ($row=mysqli_fetch_assoc($result)) {
         }
         ?>
     </table>
-    <dt><i class="fa-solid fa-plus plus"></i></dt>
+
 
 
 <link rel='stylesheet' href='menukaart.css' type='text/css'>
