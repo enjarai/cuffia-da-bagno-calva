@@ -15,7 +15,7 @@ if (isset($_POST['update']))
 
     if ($result)
     {
-        header("location:view.php");
+        header("location:../../menukaart.php");
     }
     else
     {
@@ -24,5 +24,5 @@ if (isset($_POST['update']))
 }
 else
 {
-    header("location:view.php");
+    header("location:../../menukaart.php");
 }

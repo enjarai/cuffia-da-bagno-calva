@@ -10,7 +10,7 @@ if (isset($_GET['CatDel']))
 
     if ($result)
     {
-        header("location:cat.view.php");
+        header("location:../../menukaart.php");
     }
     else
     {
@@ -19,6 +19,6 @@ if (isset($_GET['CatDel']))
 }
 else
 {
-    header("location:cat.view.php");
+    header("location:../../menukaart.php");
 }
 ?>

@@ -10,6 +10,7 @@ require "src/types/Product.php";
 
 if (isset($_POST["category"])){
     $selectedcategory = (int) $_POST["category"];
+//    echo $selectedcategory;
 }
 else{
     $selectedcategory = -1;
@@ -55,11 +56,12 @@ while ($row=mysqli_fetch_assoc($result)) {
                         <?php  } else{ ?>
                     <option value="<?php echo $categoryidT; ?>"><?php echo  $cat ->name ?></option>
                 <?php } ?>
+/                <?php } ?>
             </select>
                     <i class="fa-solid fa-plus"></i>
-                    <a href="editproducts/categoryedit/cat.edit.php?CatGetID=<?php echo $cat->id ?>"><i class="fa-solid fa-pen-to-square"></i></a>
-                    <a href="editproducts/categoryedit/cat.delete.php?CatDel=<?php echo $cat->id ?>"><i class="fa-solid fa-trash"></i></a>
-                    <?php } ?>
+                    <a href="editproducts/categoryedit/cat.edit.php?CatGetID=<?php echo $selectedcategory ?>"><i class="fa-solid fa-pen-to-square"></i></a>
+                    <a href="editproducts/categoryedit/cat.delete.php?CatDel=<?php echo $selectedcategory ?>"><i class="fa-solid fa-trash"></i></a>
+<!--                    --><?php //} ?>
                 </form>
             </div>
         </div>
