@@ -1,0 +1,48 @@
+.dropdownmenu {
+    width: 400px;
+    height: auto;
+    padding: 5px 0;
+    font-weight: bold;
+    color: #003643;
+    background-color: #e0eff6;
+    border-width: 5px;
+    border-color: #cf7f4b;
+    margin-top: 50px;
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.col-12 {
+    font-size: 25px;
+}
+
+.colum {
+    background-color: #e0eff6;
+    margin: 0 10px;
+    font-size: 20px;
+}
+
+dt {
+    padding: 5px 0;
+    min-height: 40px;
+}
+.plus{
+    float: right;
+    font-size: 25px;
+}
+
+td.cell {
+    padding: 5px 10px;
+    border-left: 10px solid white;
+    border-right: 10px solid white;
+    line-height: 1.2;
+}
+
+i {
+    color: black;
+}
+
+i:hover {
+    color: #cf7f4b;
+    transition: 0.3s;
+}

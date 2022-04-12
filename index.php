@@ -86,8 +86,8 @@ require get_page('home.php');
         <div class="sub-grid-container">
         <div class="sub-grid-item1">
             <h3>Social media:</h3>
-            <i class="fab fa-instagram size"></i>
-            <i class="fab fa-facebook"></i>
+            <i class="fab fa-instagram size icon"></i>
+            <i class="fab fa-facebook icon"></i>
             <!--            <img src='images/burgerS.png'/>-->
         </div>
         <div class="sub-grid-item2">
