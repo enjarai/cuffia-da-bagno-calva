@@ -58,7 +58,8 @@ while ($row=mysqli_fetch_assoc($result)) {
                 <?php } ?>
 /                <?php } ?>
             </select>
-                    <i class="fa-solid fa-plus"></i>
+
+                    <a href="editproducts/categoryedit/cat.create.php?=<?php $categories ?>"><i class="fa-solid fa-plus"></i></a>
                     <a href="editproducts/categoryedit/cat.edit.php?CatGetID=<?php echo $selectedcategory ?>"><i class="fa-solid fa-pen-to-square"></i></a>
                     <a href="editproducts/categoryedit/cat.delete.php?CatDel=<?php echo $selectedcategory ?>"><i class="fa-solid fa-trash"></i></a>
 <!--                    --><?php //} ?>
@@ -74,7 +75,7 @@ while ($row=mysqli_fetch_assoc($result)) {
             <td>Price</td>
             <td>Vega</td>
             <td>
-                <a target="_blank" href="editproducts/productedit/create.php?=<?php echo $products ?>"><i class="fa-solid fa-plus plus"></i></a>
+                <a href="editproducts/productedit/create.php?=<?php $products ?>"><i class="fa-solid fa-plus plus"></i></a>
             </td>
         </tr>
         <?php
