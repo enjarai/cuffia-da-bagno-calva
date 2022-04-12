@@ -22,6 +22,6 @@ if (isset($_GET["error"])) {
         echo "<p>name already taken!</p>";
     }
     else if ($_GET["error"] == "none") {
-        echo "<p>You have made a product!</p>";
+            header("location:../../menukaart.php");
     }
 }

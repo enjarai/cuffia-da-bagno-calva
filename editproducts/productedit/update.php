@@ -7,7 +7,7 @@ if (isset($_POST['update']))
    $name = $_POST['name'];
     $description = $_POST['description'];
     $price = $_POST['price'];
-    $vega = $_POST['vega'];
+    $vega = isset($_POST['vega']) ? 1 : 0;
     $categoryid = $_POST['categoryid'];
 
     $query = "update products set name = '".$name."', description = '".$description."', price = '".$price."', vega = '".$vega."', categoryid = '".$categoryid."' where productid= '".$productid."' ";
