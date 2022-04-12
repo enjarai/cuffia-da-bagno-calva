@@ -23,7 +23,10 @@ $con->query("
         description varchar(128),
         price double NOT NULL,
         vega boolean NOT NULL,
-        categoryid int NOT NULL
+        categoryid int NOT NULL,
+        FOREIGN KEY (categoryid) REFERENCES categories (categoryid)
+            ON DELETE CASCADE
+            ON UPDATE CASCADE 
     );
 ");
 $con->query("
