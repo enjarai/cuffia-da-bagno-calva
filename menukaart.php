@@ -15,27 +15,6 @@ if (isset($_POST["category"])){
 else{
     $selectedcategory = -1;
 }
-global $con;
-$query = "select * from products";
-$result = mysqli_query($con,$query);
-
-while ($row = mysqli_fetch_assoc($result)) {
-    $productid = $row['productid'];
-    $name = $row['name'];
-    $description = $row['description'];
-    $price = $row['price'];
-    $vega = $row['vega'];
-    $categoryid = $row['categoryid'];
-}
-?>
-<?php
-global $con;
-$query = "select * from categories";
-$result = mysqli_query($con,$query);
-while ($row=mysqli_fetch_assoc($result)) {
-    $categoryid = $row['categoryid'];
-    $name = $row['name'];
-}
 ?>
 
 <div class="container">
@@ -61,7 +40,7 @@ while ($row=mysqli_fetch_assoc($result)) {
 
                     <a href="editproducts/categoryedit/cat.create.php?=<?php $categories ?>"><i class="fa-solid fa-plus"></i></a>
                     <a href="editproducts/categoryedit/cat.edit.php?CatGetID=<?php echo $selectedcategory ?>"><i class="fa-solid fa-pen-to-square"></i></a>
-                    <a href="editproducts/categoryedit/cat.delete.php?CatDel=<?php echo $selectedcategory ?>"><i class="fa-solid fa-trash"></i></a>
+                    <a href="editproducts/categoryedit/cat.delete.php?CatDel=<?php echo $selectedcategory ?>" onClick="return confirm('Are you sure you want to delete this category?');"><i class="fa-solid fa-trash"></i></a>
 <!--                    --><?php //} ?>
                 </form>
             </div>
@@ -85,7 +64,7 @@ while ($row=mysqli_fetch_assoc($result)) {
                 <td class="cell colum" style="width: 25%"><?php echo $product->name ?></td>
                 <td class="cell colum" style=""><?php echo $product->description ?></td>
                 <td class="cell colum" style="width: 10%; text-align: right"><?php echo number_format($product->price, 2) ?></td>
-                <td class="cell colum" style=""><?php echo $vega?></td>
+                <td class="cell colum" style=""><?php echo $product->vega ? "ja" : "nee" ?></td>
 
                 <td class="cell colum" style="width: 1px; white-space: nowrap">
                     <dt>
