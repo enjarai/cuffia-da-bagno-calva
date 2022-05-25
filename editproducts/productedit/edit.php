@@ -23,7 +23,7 @@ while ($row=mysqli_fetch_assoc($result))
 
         <input type="text" name="price"  placeholder="price..." value="<?php echo $price ?>">
 
-        <input type="text" name="vega"  placeholder="vega..." value="<?php echo $vega ?>">
+        <input type="checkbox" name="vega"  placeholder="vega..." value="true" <?php echo $vega ? "checked" : "" ?>>
 
         <input type="text" name="categoryid" placeholder="categoryid..." value="<?php echo $categoryid ?>">
 

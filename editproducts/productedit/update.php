@@ -7,20 +7,16 @@ if (isset($_POST['update']))
    $name = $_POST['name'];
     $description = $_POST['description'];
     $price = $_POST['price'];
-    $vega = $_POST['vega'];
+    $vega = array_key_exists('vega', $_POST);
     $categoryid = $_POST['categoryid'];
 
-    $query = "update products set name = '".$name."', description = '".$description."', price = '".$price."', vega = '".$vega."', categoryid = '".$categoryid."' where productid= '".$productid."' ";
-    $result = mysqli_query($con, $query);
+    $stmt = $con->prepare("update products set name = ?, description = ?, price = ?, vega = ?, categoryid = ? where productid = ?;");
+    $stmt->bind_param("ssdbii", $name, $description, $price, $vega, $categoryid, $productid);
+    $stmt->execute();
+    $result = $stmt->get_result();
 
-    if ($result)
-    {
-        header("location:../../menukaart.php");
-    }
-    else
-    {
-      echo 'Please check you query';
-    }
+    header("location:../../menukaart.php");
+
 }
 else
 {
